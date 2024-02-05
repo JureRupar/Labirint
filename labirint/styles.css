@@ -1,0 +1,92 @@
+html, body{
+margin: 0%;
+padding: 0%;
+width: 100%;
+height: 100%;
+}  
+body{
+  text-align: center;
+  background-image: url(slike/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#glavni{
+  width: 100%;
+  height: 100%;
+}
+#sredina{
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.canv{
+  position: relative;
+  margin-top: 68px;
+  margin-left: 140px;
+}
+.play{
+  width: 150px;
+  height: 70px;
+  margin-top: 190px;
+  margin-right: 70px;
+  border-radius: 30px;
+}
+.gumbi{
+  display: flex;
+  justify-content: space-around;
+}
+.glass-ctr{
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.glass{
+  text-align: center;
+  margin-top: -150px;
+  width: 110px;
+  height: 140px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.water-ctr{
+  margin-top: -150px;
+  top: -10;
+  width: 100px;
+  height: 130px;
+  overflow: hidden;
+  background-color: rgba(211, 209, 203, 0.5);
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  position: relative;
+}
+
+.water{
+  width: 4000px;
+  height: 800px;
+  background-color: rgb(71, 36, 3);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.animate-water{
+  animation: mymove 25s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+  0%{right: 0; top: 400px;}
+  100%{right: 3400px; top: -30px;}
+}

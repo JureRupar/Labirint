@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500" height="500"></canvas>
+		<script>
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+			var img = new Image();
+			img.onload = function() {
+				ctx.drawImage(img, 0, 0);
+			}
+			img.src = "slike/labirint.svg"
+		</script>
+		
+	</body>
+</html>
