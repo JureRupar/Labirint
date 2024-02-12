@@ -421,7 +421,7 @@ function drawMaze(){
 		const ctx = canvas.getContext("2d");
 		console.log("maze "+cord.length);
 		ctx.scale(0.5, 0.5);
-		ctx.fillStyle = '#6F4E37';
+		ctx.fillStyle = 'rgb(230, 228, 223)';
 		ctx.fillRect(0, 0, 480, 480);
 		ctx.beginPath();
 		for(i=0;i<cord.length;i++){
@@ -541,35 +541,36 @@ function drawMaze(){
 			[250,700]
 		];
 		const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    const drawDelay = 100;
-    const eraseDelay = 80;
-    const totalAnimationTime = path.length * drawDelay;
-    document.querySelector('.water').classList.add('animate-water');
-    var audio = new Audio('slike/masinazakafe.mp3'); 
-    audio.play();
+        const ctx = canvas.getContext("2d");
+        const drawDelay = 100;
+        const eraseDelay = 80;
+        const totalAnimationTime = path.length * drawDelay;
+        document.querySelector('.water').classList.add('animate-water');
+        var audio = new Audio('slike/MasinaZaKafe.mp3');
+        audio.play();
 
-    let startColor = [37, 150, 190];
-    let endColor = [109, 34, 5];
+        let startColor = [37, 150, 190];
+        let endColor = [109, 34, 5];
 
-    for (let i = 0; i < path.length - 1; i++) {
-        let factor = i / (path.length - 2);
-        let interpolatedColor = interpolateColor(startColor, endColor, factor);
-        let colorHex = colorToHex(interpolatedColor);
-
-        setTimeout(() => line(ctx, i, path, colorHex), i * drawDelay);
-    }
-    setTimeout(() => {
         for (let i = 0; i < path.length - 1; i++) {
-            setTimeout(() => eraseLine(ctx, i, path), i * eraseDelay);
-        }
+            let factor = i / (path.length - 2);
+            let interpolatedColor = interpolateColor(startColor, endColor, factor);
+            let colorHex = colorToHex(interpolatedColor);
 
+            setTimeout(() => line(ctx, i, path, colorHex), i * drawDelay);
+        }
         setTimeout(() => {
-            audio.pause();
-            audio.currentTime = 0;
-        }, (path.length - 1) * eraseDelay);
-    }, totalAnimationTime + 1000);
-}
+            for (let i = 0; i < path.length - 1; i++) {
+                setTimeout(() => eraseLine(ctx, i, path), i * eraseDelay);
+            }
+
+            setTimeout(() => {
+                audio.pause();
+                audio.currentTime = 0;
+            }, (path.length - 1) * eraseDelay);
+        }, totalAnimationTime + 1000);
+    }
+
 
 function eraseLine(ctx, i, path) {
     drawMazeSegment(ctx, path[i], path[i + 1]);
@@ -580,6 +581,6 @@ function drawMazeSegment(ctx, startPoint, endPoint) {
 	ctx.moveTo(startPoint[0], startPoint[1]);
 	ctx.lineTo(endPoint[0], endPoint[1]);
 	ctx.lineWidth = 8;
-	ctx.strokeStyle = '#6F4E37';
+	ctx.strokeStyle = 'rgb(230, 228, 223)';
 	ctx.stroke();
 }
