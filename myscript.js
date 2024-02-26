@@ -604,6 +604,8 @@ function moveImageAlongPath() {
     let stepX = path[1][0] - path[0][0];
     let stepY = path[1][1] - path[0][1];
     let progress = 0; // Progress towards the next point
+	const waterElement = document.querySelector('.water');
+    waterElement.style.backgroundColor = ' rgb(233, 183, 136)';
 
     function animate() {
 		if (currentStep >= path.length - 1) {

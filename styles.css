@@ -69,9 +69,8 @@ a{
 .glass{
   text-align: center;
   margin-top: -130px;
-  width: 110px;
+  width: 190px;
   height: 140px;
-  background-color: rgb(255, 255, 255);
   position: absolute;
   -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
@@ -83,9 +82,10 @@ a{
   width: 100px;
   height: 130px;
   overflow: hidden;
-  background-color: rgba(211, 209, 203, 0.5);
+  border-radius: 24px;
+  background-color: rgb(211, 209, 203);
   -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 15% 100%);
   position: relative;
 }
 
