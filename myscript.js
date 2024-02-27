@@ -500,7 +500,6 @@ var path = [
 	[250,482],
 	[250,700]
 ];	
-	
 function interpolateColor(color1, color2, factor) {
     let result = color1.slice();
     for (let i = 0; i < 3; i++) {
@@ -550,6 +549,8 @@ function drawMaze(){
         var audio = new Audio('slike/MasinaZaKafe.mp3');
 		audio.volume=0.15;
         audio.play();
+		document.getElementById("play").setAttribute("disabled",true);
+		document.getElementById("play2").setAttribute("disabled",true);
 
         let startColor = [37, 150, 190];
         let endColor = [109, 34, 5];
@@ -576,8 +577,10 @@ function drawMaze(){
 
 function eraseLine(ctx, i, path) {
     drawMazeSegment(ctx, path[i], path[i + 1]);
+	document.getElementById("play").removeAttribute("disabled");
+	document.getElementById("play2").removeAttribute("disabled");
+	setTimeout(function(){location.reload();}, 8000);
 }
-
 function drawMazeSegment(ctx, startPoint, endPoint) {
 	ctx.beginPath();
 	ctx.moveTo(startPoint[0], startPoint[1]);
