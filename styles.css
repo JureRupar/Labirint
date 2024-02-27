@@ -13,7 +13,7 @@ body{
 a{
   font-size: 3em;
   margin-top: 10px;
-  font-family: 'Coffee Shop', sans-serif;
+  font-family: 'Afternoon Coffee', sans-serif;
 }
 .ho{
   position: relative;
@@ -45,12 +45,13 @@ a{
   left: 0;
 }
 .play{
-  width: 150px;
+  width: 80px;
   height: 70px;
   margin-top: 243px;
   margin-right: 10px;
-  border-radius: 30px;
-  font-size: 28px;
+  border-radius: 35px;
+  font-size: 19px;
+  font-family: 'Coffee Shop', sans-serif;
 }
 .gumbi{
   display: flex;
